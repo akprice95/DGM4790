@@ -5,11 +5,12 @@ const testRoute =require('./routes/test.route');
 const app = express()
 
 app.use('/', testRoute)
-// app.use('/api', function(req, res, next) {
-//     console.log(req)
-// console.log(`A new request was recieved at ${new date().toLocalString()}`)
-//  res.send('thanks for hitting my api')
-// })
+app.use('/', function(req, res, next) {
+    console.log(req);
+    console.log(`A new request was received at ${new Date()
+        .toLocaleString()}`)
+        res.send(`<h1>Thanks for hitting my page</h1>`)
+}) 
 
 
 const port = 5000
